@@ -229,17 +229,12 @@ const std::map< std::string, std::string >& R2000Driver::getParameters()
 //-----------------------------------------------------------------------------
 bool R2000Driver::setScanFrequency(unsigned int frequency)
 {
-    if( !command_interface_ )
-        return false;
-    return command_interface_->setParameter("scan_frequency",std::to_string(frequency));
+    return true;
 }
 
-//-----------------------------------------------------------------------------
 bool R2000Driver::setSamplesPerScan(unsigned int samples)
 {
-    if( !command_interface_ )
-        return false;
-    return command_interface_->setParameter("samples_per_scan",std::to_string(samples));
+    return true;
 }
 
 //-----------------------------------------------------------------------------
@@ -253,17 +248,13 @@ bool R2000Driver::rebootDevice()
 //-----------------------------------------------------------------------------
 bool R2000Driver::resetParameters(const std::vector<std::string> &names)
 {
-    if( !command_interface_ )
-        return false;
-    return command_interface_->resetParameters(names);
+    return true;
 }
 
 //-----------------------------------------------------------------------------
 bool R2000Driver::setParameter(const std::string &name, const std::string &value)
 {
-    if( !command_interface_ )
-        return false;
-    return command_interface_->setParameter(name,value);
+    return true;
 }
 
 //-----------------------------------------------------------------------------
